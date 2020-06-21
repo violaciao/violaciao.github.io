@@ -1,4 +1,4 @@
-// Write our JavaScript in here
+// JavaScript in here
 var pics = [
 	"imgs/1.jpg", 		//0
 	"imgs/2.jpg", 	//1
