@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to Build Your AI Strategy in 2026 | Viola Conseil</title>
+  <meta name="description" content="A practical guide for startup founders on creating an AI roadmap that aligns with business goals and delivers measurable ROI." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="How to Build Your AI Strategy in 2026" />
+  <meta property="og:description" content="A practical guide for startup founders on creating an AI roadmap that aligns with business goals and delivers measurable ROI." />
+  <meta property="og:type" content="article" />
+
+  <!-- Minimal, premium “purple cyberpunk” styling (self-contained) -->
+  <style>
+    :root{
+      --bg: #07060f;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.08);
+      --text: rgba(255,255,255,.88);
+      --muted: rgba(255,255,255,.68);
+      --muted2: rgba(255,255,255,.55);
+      --border: rgba(255,255,255,.12);
+      --accent: #b54cff;
+      --accent2: #4dd9ff;
+      --shadow: 0 18px 70px rgba(0,0,0,.45);
+      --radius: 18px;
+      --max: 980px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:
+        radial-gradient(900px 500px at 12% 8%, rgba(181,76,255,.18), transparent 60%),
+        radial-gradient(900px 500px at 85% 12%, rgba(77,217,255,.12), transparent 60%),
+        radial-gradient(1200px 800px at 50% 100%, rgba(181,76,255,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    a:hover{opacity:.92}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px;}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:14px 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    .brand{
+      display:flex; flex-direction:column; gap:2px;
+      letter-spacing:.02em;
+    }
+    .brand b{font-size:14px; color:rgba(255,255,255,.92)}
+    .brand span{font-size:12px; color:var(--muted2)}
+    .nav{
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+      font-size:13px;
+    }
+    .chip{
+      padding:8px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background: rgba(255,255,255,.05);
+    }
+    .chip:hover{border-color: rgba(181,76,255,.45)}
+    .hero{
+      margin-top:18px;
+      padding:26px 18px;
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      font-size:12px; color:var(--muted);
+      letter-spacing:.08em; text-transform:uppercase;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 18px rgba(181,76,255,.55);
+    }
+    h1{
+      margin:10px 0 6px;
+      font-size: clamp(26px, 3.6vw, 44px);
+      line-height:1.15;
+      letter-spacing:-.02em;
+    }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      max-width: 60ch;
+    }
+    .meta{
+      margin-top:14px;
+      display:flex; gap:12px; flex-wrap:wrap;
+      color:var(--muted2); font-size:13px;
+    }
+    .meta span{
+      padding:6px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .content{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .card{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.05);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      padding: 18px;
+    }
+    h2{
+      margin: 0 0 8px;
+      font-size: 20px;
+      letter-spacing: -.01em;
+    }
+    h3{
+      margin: 14px 0 8px;
+      font-size: 16px;
+      color: rgba(255,255,255,.92);
+    }
+    p{margin: 10px 0}
+    ul{margin: 8px 0 8px 20px}
+    li{margin: 6px 0; color: var(--text)}
+    .muted{color:var(--muted)}
+    .callout{
+      border: 1px solid rgba(181,76,255,.35);
+      background: linear-gradient(180deg, rgba(181,76,255,.12), rgba(255,255,255,.04));
+      padding: 14px;
+      border-radius: 14px;
+    }
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media(min-width: 880px){
+      .content{grid-template-columns: 1.7fr .9fr}
+      .grid2{grid-template-columns: 1fr 1fr}
+    }
+    .side h3{margin-top:0}
+    .btnrow{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 12px; border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      font-weight:600;
+      font-size: 13px;
+    }
+    .btn.primary{
+      border-color: rgba(181,76,255,.55);
+      background: linear-gradient(135deg, rgba(181,76,255,.35), rgba(77,217,255,.18));
+    }
+    code, pre{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 13px;
+      color: rgba(255,255,255,.86);
+    }
+    pre{
+      margin: 10px 0 0;
+      padding: 12px;
+      background: rgba(0,0,0,.28);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow:auto;
+    }
+    .footer{
+      margin-top: 18px;
+      color: var(--muted2);
+      font-size: 12px;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <b>VIOLA CONSEIL</b>
+        <span>AI Consulting Excellence</span>
+      </div>
+      <nav class="nav">
+        <a class="chip" href="../index.html#solutions">Solutions</a>
+        <a class="chip" href="../index.html#insights">Insights</a>
+        <a class="chip" href="../index.html#pricing">Pricing</a>
+        <a class="chip" href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="kicker"><span class="dot"></span> Strategy • 2026 Roadmap</div>
+      <h1>How to Build Your AI Strategy in 2026</h1>
+      <p class="sub">A practical guide for startup founders on creating an AI roadmap that aligns with business goals and delivers measurable ROI.</p>
+
+      <div class="meta">
+        <span>⏱️ 8 min read</span>
+        <span>📅 Dec 15, 2024</span>
+        <span>🎯 Focus: ROI + Execution</span>
+      </div>
+    </section>
+
+    <main class="content">
+      <!-- MAIN ARTICLE -->
+      <article class="card">
+        <h2>Why “AI Strategy” fails at startups (and how to fix it)</h2>
+        <p class="muted">
+          Most teams start with tools (“Should we use model X?”) instead of outcomes (“Which workflow makes money, saves money, or reduces risk?”).
+          The fix is a roadmap that is <b>business-first</b>, <b>measurable</b>, and <b>sequenced</b> into quick wins → durable systems.
+        </p>
+
+        <div class="callout">
+          <b>Definition (use this internally):</b>
+          <p style="margin:8px 0 0">
+            Your AI strategy is a prioritized list of AI-enabled initiatives tied to business metrics, with a timeline, owners, data dependencies, risk controls, and expected ROI.
+          </p>
+        </div>
+
+        <h3>Step 1 — Set 1–2 business goals (not 12)</h3>
+        <p>Pick goals that already have executive attention and clear economics. Examples:</p>
+        <ul>
+          <li><b>Revenue:</b> increase qualified leads, improve conversion, lift ARPA, reduce churn</li>
+          <li><b>Cost:</b> reduce support load, shorten cycle time, cut manual ops</li>
+          <li><b>Risk:</b> compliance checks, fraud detection, brand safety</li>
+        </ul>
+        <p class="muted">Rule of thumb: if you can’t measure it weekly, it’s not a roadmap goal.</p>
+
+        <h3>Step 2 — Map the highest-leverage workflows</h3>
+        <p>Don’t brainstorm “AI ideas.” Map workflows end-to-end and locate bottlenecks:</p>
+        <div class="grid2">
+          <div class="callout">
+            <b>Sales / Marketing</b>
+            <ul>
+              <li>Lead enrichment + routing</li>
+              <li>Personalized outreach</li>
+              <li>Content repurposing</li>
+              <li>Attribution + insights</li>
+            </ul>
+          </div>
+          <div class="callout">
+            <b>Support / Ops</b>
+            <ul>
+              <li>Ticket triage + suggested replies</li>
+              <li>Self-serve knowledge search</li>
+              <li>Refund / exception automation</li>
+              <li>Quality monitoring</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Step 3 — Prioritize with a simple scoring model</h3>
+        <p>Use a lightweight framework so decisions are fast and defensible:</p>
+        <pre>
+Score = (Impact × Confidence) / Effort
+
+Impact: expected $ or hours saved per month
+Confidence: data quality + feasibility + stakeholder buy-in
+Effort: engineering + integration + change management
+        </pre>
+
+        <h3>Step 4 — Choose your first 30-day MVP (and define “done”)</h3>
+        <p>Great first MVPs are narrow, measurable, and easy to adopt:</p>
+        <ul>
+          <li><b>Support:</b> draft replies + knowledge retrieval, measured by handle time & CSAT</li>
+          <li><b>Growth:</b> content/creative generation + testing loop, measured by CTR/CVR</li>
+          <li><b>Ops:</b> auto-classification + routing, measured by cycle time & error rate</li>
+        </ul>
+
+        <div class="callout">
+          <b>MVP “done” checklist</b>
+          <ul>
+            <li>Baseline metric measured (before)</li>
+            <li>Experiment plan (A/B or phased rollout)</li>
+            <li>Human-in-the-loop + fallback path</li>
+            <li>Monitoring: quality + cost + latency</li>
+            <li>Weekly review with a single owner</li>
+          </ul>
+        </div>
+
+        <h3>Step 5 — Build the foundation you’ll reuse</h3>
+        <p>To avoid one-off prototypes, invest early in reusable components:</p>
+        <ul>
+          <li><b>Data layer:</b> clean sources of truth, event tracking, access rules</li>
+          <li><b>Evaluation:</b> offline test set + “LLM-as-judge” style checks + human spot review</li>
+          <li><b>Guardrails:</b> PII redaction, policy filters, prompt injection handling</li>
+          <li><b>Cost controls:</b> caching, routing, model selection by task</li>
+        </ul>
+
+        <h3>Step 6 — 90-day roadmap template (copy/paste)</h3>
+        <pre>
+Weeks 1–2: Opportunity audit + KPI baseline + data readiness
+Weeks 3–6: MVP build + pilot rollout + eval/monitoring
+Weeks 7–10: Iterate (quality, cost, UX) + expand coverage
+Weeks 11–13: Scale rollout + training + governance + next initiatives
+        </pre>
+
+        <h3>Common pitfalls (avoid these)</h3>
+        <ul>
+          <li><b>Tool-first decisions:</b> choosing models before workflows and metrics</li>
+          <li><b>No adoption plan:</b> nobody changes behavior → zero ROI</li>
+          <li><b>Missing governance:</b> security/compliance blocks launch late</li>
+          <li><b>No evaluation:</b> quality regressions kill trust</li>
+          <li><b>Overbuilding:</b> big platform projects before quick wins</li>
+        </ul>
+
+        <div class="callout">
+          <b>Bottom line:</b> If you can show a measurable gain in 30–90 days, you’ll earn the right to invest further.
+        </div>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="card side">
+        <h3>Want help building your roadmap?</h3>
+        <p class="muted">
+          Viola Conseil helps founders turn AI into measurable business growth — from opportunity audit → MVP → scale.
+        </p>
+        <div class="btnrow">
+          <a class="btn primary" href="../index.html#contact">Book Free Consultation</a>
+          <a class="btn" href="../index.html#solutions">View Solutions</a>
+        </div>
+
+        <hr style="border:0; border-top:1px solid var(--border); margin:16px 0">
+
+        <h3>One-page AI Strategy Checklist</h3>
+        <ul class="muted">
+          <li>Business goal + KPI baseline</li>
+          <li>Workflow map + bottleneck</li>
+          <li>Prioritized initiative list</li>
+          <li>MVP with “done” definition</li>
+          <li>Evaluation + monitoring</li>
+          <li>Governance + rollout plan</li>
+        </ul>
+
+        <hr style="border:0; border-top:1px solid var(--border); margin:16px 0">
+
+        <h3>Back to homepage</h3>
+        <a class="chip" href="../index.html#insights">← Latest AI Insights</a>
+      </aside>
+    </main>
+
+    <div class="footer">
+      © 2026 Viola Conseil. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>
