@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Viola Conseil - AI Consulting Excellence. Helping startups achieve 10x growth with practical AI implementation.">
+    <title>Viola Conseil | AI Consulting Excellence</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0A0E27;
+            --secondary: #1A1D2E;
+            --accent: #00D9FF;
+            --accent-glow: rgba(0, 217, 255, 0.3);
+            --white: #FFFFFF;
+            --gray-light: #F8F9FA;
+            --gray-mid: #6B7280;
+            --success: #10B981;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 0, 0, 0.05);
+            padding: 0.4rem;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .lang-option {
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: var(--gray-mid);
+        }
+
+        .lang-option.active {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo-main {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 200;
+            letter-spacing: 0.2em;
+            color: var(--primary);
+            text-transform: uppercase;
+        }
+
+        .logo-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.7rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            color: var(--accent);
+            text-transform: uppercase;
+            padding-left: 48px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-cta {
+            padding: 0.75rem 2rem;
+            background: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+        }
+
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.1), transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 217, 255, 0.05), transparent 50%);
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: 
+                radial-gradient(circle, white 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(0, 217, 255, 0.15);
+            border: 1px solid var(--accent);
+            border-radius: 50px;
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 200;
+            letter-spacing: 0.05em;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 .highlight {
+            color: var(--accent);
+            font-weight: 300;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary {
+            padding: 1.25rem 3rem;
+            background: var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+            display: inline-block;
+        }
+
+        .cta-primary:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--accent-glow);
+        }
+
+        .cta-secondary {
+            padding: 1.25rem 3rem;
+            background: transparent;
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            display: inline-block;
+        }
+
+        .cta-secondary:hover {
+            border-color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 200;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(0, 217, 255, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 50px;
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 200;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-mid);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Problem Grid */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: white;
+            border: 2px solid rgba(0, 0, 0, 0.05);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .problem-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+        }
+
+        .problem-text {
+            color: var(--gray-mid);
+            line-height: 1.8;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            background: var(--gray-light);
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .solution-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .solution-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .solution-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 217, 255, 0.15);
+        }
+
+        .solution-number {
+            font-size: 1rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        .solution-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+        }
+
+        .solution-text {
+            color: var(--gray-mid);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .solution-features {
+            list-style: none;
+        }
+
+        .solution-features li {
+            padding: 0.5rem 0;
+            color: var(--primary);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .solution-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            background: white;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .blog-card {
+            background: white;
+            border: 2px solid rgba(0, 0, 0, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(0, 217, 255, 0.2), transparent 60%);
+        }
+
+        .blog-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .blog-icon {
+            font-size: 4rem;
+            opacity: 0.3;
+            color: white;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray-mid);
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: var(--gray-mid);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-read-more {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .blog-read-more:hover {
+            gap: 1rem;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent);
+            background: rgba(0, 217, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: attr(data-badge);
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+
+        .pricing-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 200;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price span {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .pricing-desc {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            padding-left: 1.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .pricing-cta {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: var(--primary);
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+        }
+
+        .pricing-cta:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--gray-light);
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+        }
+
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: var(--gray-light);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(0, 217, 255, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1.25rem 2rem;
+            background: var(--accent);
+            color: var(--primary);
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .form-submit:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--accent-glow);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .form-success {
+            background: var(--success);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .form-success.show {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand-main {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-brand-text {
+            font-size: 1.8rem;
+            font-weight: 200;
+            letter-spacing: 0.2em;
+            color: var(--white);
+            text-transform: uppercase;
+        }
+
+        .footer-brand-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.75rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            color: var(--accent);
+            text-transform: uppercase;
+            padding-left: 48px;
+        }
+
+        .footer-desc {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* SVG Styles */
+        .icon-primary {
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .icon-accent {
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .icon-white {
+            stroke: white;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .stats-bar {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .logo-tagline {
+                font-size: 0.6rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+            }
+
+            .cta-primary,
+            .cta-secondary {
+                width: 100%;
+                text-align: center;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-main">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="40" cy="40" r="35" class="icon-primary"/>
+                            <circle cx="40" cy="20" r="3" class="icon-accent"/>
+                            <circle cx="25" cy="35" r="3" class="icon-accent"/>
+                            <circle cx="55" cy="35" r="3" class="icon-accent"/>
+                            <circle cx="30" cy="55" r="3" class="icon-accent"/>
+                            <circle cx="50" cy="55" r="3" class="icon-accent"/>
+                            <path d="M 40 20 L 25 35" class="icon-primary" opacity="0.3"/>
+                            <path d="M 40 20 L 55 35" class="icon-primary" opacity="0.3"/>
+                            <path d="M 25 35 L 30 55" class="icon-primary" opacity="0.3"/>
+                            <path d="M 55 35 L 50 55" class="icon-primary" opacity="0.3"/>
+                            <circle cx="40" cy="40" r="2" class="icon-accent"/>
+                            <path d="M 40 20 L 40 40" class="icon-accent" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text" data-en="VIOLA CONSEIL" data-zh="VIOLA CONSEIL">VIOLA CONSEIL</span>
+                </div>
+                <span class="logo-tagline">AI Consulting Excellence</span>
+            </a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#solutions" data-en="Solutions" data-zh="解决方案">Solutions</a></li>
+                    <li><a href="#blog" data-en="Insights" data-zh="洞察">Insights</a></li>
+                    <li><a href="#pricing" data-en="Pricing" data-zh="定价">Pricing</a></li>
+                </ul>
+                <div class="lang-toggle" onclick="toggleLanguage()">
+                    <span class="lang-option active" data-lang="en">EN</span>
+                    <span class="lang-option" data-lang="zh">中文</span>
+                </div>
+                <a href="#contact" class="nav-cta" data-en="Get Started" data-zh="免费咨询">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-pattern"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-badge" data-en="AI-POWERED GROWTH" data-zh="AI赋能 · 初创加速">AI-POWERED GROWTH</span>
+                <h1 data-en="Transform Your Startup with <span class='highlight'>AI Excellence</span>" data-zh="让您的初创公司<br>用AI实现<span class='highlight'>10倍增长</span>">Transform Your Startup with <span class="highlight">AI Excellence</span></h1>
+                <p class="hero-subtitle" data-en="We help founders turn cutting-edge AI into tangible business growth. No tech background needed, no massive budget required. See results in 90 days." data-zh="我们帮助创业者将最新AI技术转化为实际业务增长。无需技术背景，无需大笔预算，90天内看到成果。">
+                    We help founders turn cutting-edge AI into tangible business growth. No tech background needed, no massive budget required. See results in 90 days.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#contact" class="cta-primary" data-en="Book Free Consultation" data-zh="预约免费咨询">Book Free Consultation</a>
+                    <a href="#solutions" class="cta-secondary" data-en="View Solutions" data-zh="查看解决方案">View Solutions</a>
+                </div>
+
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <div class="stat-number">3x</div>
+                        <div class="stat-label" data-en="Average Efficiency Gain" data-zh="平均效率提升">Average Efficiency Gain</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">90</div>
+                        <div class="stat-label" data-en="Days to Results" data-zh="天见效周期">Days to Results</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label" data-en="Success Stories" data-zh="成功案例">Success Stories</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge" data-en="THE CHALLENGE" data-zh="创业难题">THE CHALLENGE</span>
+                <h2 class="section-title" data-en="The AI Dilemma for Startups" data-zh="初创公司的AI困境">The AI Dilemma for Startups</h2>
+                <p class="section-subtitle" data-en="You know AI can help your business, but where do you start? You're not alone." data-zh="您知道AI能帮助业务，但不知从何下手？您不是一个人。">
+                    You know AI can help your business, but where do you start? You're not alone.
+                </p>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">⏰</div>
+                    <h3 class="problem-title" data-en="Time Pressure" data-zh="时间紧迫">Time Pressure</h3>
+                    <p class="problem-text" data-en="As a founder, you're juggling 100 things daily. No time to research AI tools and technologies. High learning curve, costly mistakes." data-zh="创业者每天要处理100件事，没时间研究AI技术和工具。学习成本高，试错代价大。">
+                        As a founder, you're juggling 100 things daily. No time to research AI tools and technologies. High learning curve, costly mistakes.
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">💰</div>
+                    <h3 class="problem-title" data-en="Limited Budget" data-zh="预算有限">Limited Budget</h3>
+                    <p class="problem-text" data-en="Enterprise companies invest millions in AI transformation. Startups can't afford that. You need high-ROI solutions that pay back fast." data-zh="大公司动辄投入百万做AI转型，初创公司负担不起。需要高ROI、快速回本的方案。">
+                        Enterprise companies invest millions in AI transformation. Startups can't afford that. You need high-ROI solutions that pay back fast.
+                    </p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">🤔</div>
+                    <h3 class="problem-title" data-en="Where to Start?" data-zh="不知从何开始">Where to Start?</h3>
+                    <p class="problem-text" data-en="Too many AI tools, unclear which fit your business. Worried about choosing the wrong tech stack or strategy." data-zh="市面上AI工具太多，不知道哪些适合自己的业务。担心走弯路、选错技术路线。">
+                        Too many AI tools, unclear which fit your business. Worried about choosing the wrong tech stack or strategy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="section solution-section" id="solutions">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge" data-en="OUR APPROACH" data-zh="我们的方法">OUR APPROACH</span>
+                <h2 class="section-title" data-en="AI Implementation in 3 Steps" data-zh="3步落地AI转型">AI Implementation in 3 Steps</h2>
+                <p class="section-subtitle" data-en="A pragmatic AI implementation framework designed for startups. Results in 90 days." data-zh="专为初创公司设计的务实AI实施方案，90天见效。">
+                    A pragmatic AI implementation framework designed for startups. Results in 90 days.
+                </p>
+            </div>
+
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <div class="solution-number">STEP 01</div>
+                    <h3 class="solution-title" data-en="AI Opportunity Audit" data-zh="AI机会诊断">AI Opportunity Audit</h3>
+                    <p class="solution-text" data-en="Deep analysis of your business processes to identify high-value AI opportunities. Prioritize high-ROI, quick-win areas." data-zh="深度分析您的业务流程，识别最有价值的AI应用场景。优先高ROI、快速见效的领域。">
+                        Deep analysis of your business processes to identify high-value AI opportunities. Prioritize high-ROI, quick-win areas.
+                    </p>
+                    <ul class="solution-features">
+                        <li data-en="Business Process Audit" data-zh="业务流程审计">Business Process Audit</li>
+                        <li data-en="AI Opportunity Mapping" data-zh="AI机会地图">AI Opportunity Mapping</li>
+                        <li data-en="ROI Forecasting" data-zh="ROI预测模型">ROI Forecasting</li>
+                        <li data-en="Priority Ranking" data-zh="优先级排序">Priority Ranking</li>
+                    </ul>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-number">STEP 02</div>
+                    <h3 class="solution-title" data-en="Rapid MVP Launch" data-zh="快速MVP实施">Rapid MVP Launch</h3>
+                    <p class="solution-text" data-en="Select 1-2 high-value scenarios, build working prototypes in 30 days. Iterate fast, validate quickly, minimize risk." data-zh="选择1-2个高价值场景，30天内搭建可用原型。小步快跑，快速验证，降低风险。">
+                        Select 1-2 high-value scenarios, build working prototypes in 30 days. Iterate fast, validate quickly, minimize risk.
+                    </p>
+                    <ul class="solution-features">
+                        <li data-en="Tool Selection & Setup" data-zh="工具选型与采购">Tool Selection & Setup</li>
+                        <li data-en="System Integration" data-zh="系统集成与配置">System Integration</li>
+                        <li data-en="Team Training" data-zh="团队培训">Team Training</li>
+                        <li data-en="A/B Testing" data-zh="A/B测试验证">A/B Testing</li>
+                    </ul>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-number">STEP 03</div>
+                    <h3 class="solution-title" data-en="Scale & Optimize" data-zh="扩展与优化">Scale & Optimize</h3>
+                    <p class="solution-text" data-en="Continuous optimization based on data feedback. Gradually expand to more scenarios. Ensure long-term ROI and build AI-driven culture." data-zh="基于数据反馈持续优化，逐步扩展到更多场景。确保长期ROI，建立AI驱动文化。">
+                        Continuous optimization based on data feedback. Gradually expand to more scenarios. Ensure long-term ROI and build AI-driven culture.
+                    </p>
+                    <ul class="solution-features">
+                        <li data-en="Performance Dashboard" data-zh="数据监控仪表盘">Performance Dashboard</li>
+                        <li data-en="Iterative Improvements" data-zh="效果优化迭代">Iterative Improvements</li>
+                        <li data-en="Expansion Roadmap" data-zh="场景扩展路线图">Expansion Roadmap</li>
+                        <li data-en="Ongoing Support" data-zh="长期支持计划">Ongoing Support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section blog-section" id="blog">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge" data-en="INSIGHTS & EXPERTISE" data-zh="洞察与专业">INSIGHTS & EXPERTISE</span>
+                <h2 class="section-title" data-en="Latest AI Insights" data-zh="最新AI洞察">Latest AI Insights</h2>
+                <p class="section-subtitle" data-en="Expert perspectives on AI implementation, trends, and best practices for startups." data-zh="关于AI实施、趋势和最佳实践的专业视角。">
+                    Expert perspectives on AI implementation, trends, and best practices for startups.
+                </p>
+            </div>
+
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <span class="blog-category" data-en="Strategy" data-zh="策略">Strategy</span>
+                        <div class="blog-icon">🎯</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 <span data-en="Dec 15, 2024" data-zh="2024年12月15日">Dec 15, 2024</span></span>
+                            <span>⏱️ <span data-en="8 min read" data-zh="8分钟阅读">8 min read</span></span>
+                        </div>
+                        <h3 class="blog-title" data-en="How to Build Your AI Strategy in 2025" data-zh="2025年如何制定AI战略">How to Build Your AI Strategy in 2025</h3>
+                        <p class="blog-excerpt" data-en="A practical guide for startup founders on creating an AI roadmap that aligns with business goals and delivers measurable ROI." data-zh="为创业者提供的实用指南，教您如何制定与业务目标一致且能带来可衡量ROI的AI路线图。">
+                            A practical guide for startup founders on creating an AI roadmap that aligns with business goals and delivers measurable ROI.
+                        </p>
+                        <a href="#" class="blog-read-more" data-en="Read More →" data-zh="阅读更多 →">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <span class="blog-category" data-en="Implementation" data-zh="实施">Implementation</span>
+                        <div class="blog-icon">⚡</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 <span data-en="Dec 10, 2024" data-zh="2024年12月10日">Dec 10, 2024</span></span>
+                            <span>⏱️ <span data-en="6 min read" data-zh="6分钟阅读">6 min read</span></span>
+                        </div>
+                        <h3 class="blog-title" data-en="5 AI Tools Every Startup Should Use in 2025" data-zh="2025年每个初创公司都应使用的5个AI工具">5 AI Tools Every Startup Should Use in 2025</h3>
+                        <p class="blog-excerpt" data-en="Discover the essential AI tools that can 3x your team's productivity without breaking the bank. Real examples and ROI calculations included." data-zh="发现能让团队生产力提升3倍且不会耗尽预算的必备AI工具。包含真实案例和ROI计算。">
+                            Discover the essential AI tools that can 3x your team's productivity without breaking the bank. Real examples and ROI calculations included.
+                        </p>
+                        <a href="#" class="blog-read-more" data-en="Read More →" data-zh="阅读更多 →">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <span class="blog-category" data-en="Case Study" data-zh="案例研究">Case Study</span>
+                        <div class="blog-icon">📊</div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>📅 <span data-en="Dec 5, 2024" data-zh="2024年12月5日">Dec 5, 2024</span></span>
+                            <span>⏱️ <span data-en="10 min read" data-zh="10分钟阅读">10 min read</span></span>
+                        </div>
+                        <h3 class="blog-title" data-en="How a SaaS Startup Cut Support Costs by 60% with AI" data-zh="SaaS初创公司如何用AI削减60%的客服成本">How a SaaS Startup Cut Support Costs by 60% with AI</h3>
+                        <p class="blog-excerpt" data-en="A detailed case study of implementing AI-powered customer support. From strategy to execution, including challenges and lessons learned." data-zh="AI驱动客户支持实施的详细案例研究。从战略到执行，包括挑战和经验教训。">
+                            A detailed case study of implementing AI-powered customer support. From strategy to execution, including challenges and lessons learned.
+                        </p>
+                        <a href="#" class="blog-read-more" data-en="Read More →" data-zh="阅读更多 →">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section pricing-section" id="pricing">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge" style="background: rgba(0, 217, 255, 0.2);" data-en="INVESTMENT PLANS" data-zh="投资方案">INVESTMENT PLANS</span>
+                <h2 class="section-title" style="color: white;" data-en="Flexible Pricing for Startups" data-zh="适合初创的灵活定价">Flexible Pricing for Startups</h2>
+                <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.7);" data-en="No hidden fees. Pay for results. Performance-based options available." data-zh="无隐藏费用，按成果付费，先见效后付款的可选方案。">
+                    No hidden fees. Pay for results. Performance-based options available.
+                </p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-name" data-en="Discovery" data-zh="探索版">Discovery</h3>
+                    <div class="pricing-price" data-en="Free" data-zh="免费">Free</div>
+                    <p class="pricing-desc" data-en="1-hour free consultation to explore AI opportunities" data-zh="1小时免费咨询，了解AI能为您做什么">
+                        1-hour free consultation to explore AI opportunities
+                    </p>
+                    <ul class="pricing-features">
+                        <li data-en="AI Opportunity Assessment" data-zh="业务AI机会诊断">AI Opportunity Assessment</li>
+                        <li data-en="Custom Strategy Recommendations" data-zh="定制化方案建议">Custom Strategy Recommendations</li>
+                        <li data-en="ROI Forecast Report" data-zh="ROI预测报告">ROI Forecast Report</li>
+                        <li data-en="Tool Recommendations" data-zh="工具推荐清单">Tool Recommendations</li>
+                    </ul>
+                    <a href="#contact" class="pricing-cta" data-en="Book Now" data-zh="立即预约">Book Now</a>
+                </div>
+
+                <div class="pricing-card featured" data-badge="MOST POPULAR" data-badge-zh="最受欢迎">
+                    <h3 class="pricing-name" data-en="Quick Start" data-zh="快速启动">Quick Start</h3>
+                    <div class="pricing-price">$4,500<span data-en="/project" data-zh="/项目">/project</span></div>
+                    <p class="pricing-desc" data-en="30-day MVP implementation to validate AI value" data-zh="30天MVP实施，快速验证AI价值">
+                        30-day MVP implementation to validate AI value
+                    </p>
+                    <ul class="pricing-features">
+                        <li data-en="1 High-Value Scenario" data-zh="1个高价值场景落地">1 High-Value Scenario</li>
+                        <li data-en="Tool Setup & Configuration" data-zh="工具采购与配置">Tool Setup & Configuration</li>
+                        <li data-en="Team Training (up to 5)" data-zh="团队培训（5人内）">Team Training (up to 5)</li>
+                        <li data-en="30-Day Support" data-zh="30天技术支持">30-Day Support</li>
+                        <li data-en="Performance Dashboard" data-zh="效果监控仪表盘">Performance Dashboard</li>
+                        <li data-en="Optimization Report" data-zh="优化建议报告">Optimization Report</li>
+                    </ul>
+                    <a href="#contact" class="pricing-cta" data-en="Get Started" data-zh="开始咨询">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <h3 class="pricing-name" data-en="Full Transformation" data-zh="全面转型">Full Transformation</h3>
+                    <div class="pricing-price">$15,000<span data-en="/quarter" data-zh="/季度">/quarter</span></div>
+                    <p class="pricing-desc" data-en="90-day systematic AI transformation with ongoing optimization" data-zh="90天系统化AI转型，持续优化">
+                        90-day systematic AI transformation with ongoing optimization
+                    </p>
+                    <ul class="pricing-features">
+                        <li data-en="3-5 Deep Implementations" data-zh="3-5个场景深度实施">3-5 Deep Implementations</li>
+                        <li data-en="Custom AI Strategy Roadmap" data-zh="定制AI策略路线图">Custom AI Strategy Roadmap</li>
+                        <li data-en="Unlimited Training" data-zh="无限次培训与辅导">Unlimited Training</li>
+                        <li data-en="90-Day Full Support" data-zh="90天全程陪跑支持">90-Day Full Support</li>
+                        <li data-en="Monthly Reviews" data-zh="月度复盘与优化">Monthly Reviews</li>
+                        <li data-en="Priority Support" data-zh="优先技术支持">Priority Support</li>
+                        <li data-en="ROI Guarantee*" data-zh="ROI保证承诺*">ROI Guarantee*</li>
+                    </ul>
+                    <a href="#contact" class="pricing-cta" data-en="Partner with Us" data-zh="深度合作">Partner with Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-badge" data-en="GET IN TOUCH" data-zh="联系我们">GET IN TOUCH</span>
+                <h2 class="section-title" data-en="Start Your AI Journey" data-zh="开始您的AI之旅">Start Your AI Journey</h2>
+                <p class="section-subtitle" data-en="Fill out the form and receive a free AI assessment within 24 hours" data-zh="填写表单，24小时内获得免费AI诊断报告">
+                    Fill out the form and receive a free AI assessment within 24 hours
+                </p>
+            </div>
+
+            <div class="contact-container">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label" data-en="Your Name *" data-zh="您的姓名 *">Your Name *</label>
+                        <input type="text" class="form-input" name="name" required placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-en="Email Address *" data-zh="电子邮箱 *">Email Address *</label>
+                        <input type="email" class="form-input" name="email" required placeholder="john@company.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-en="Company Name" data-zh="公司名称">Company Name</label>
+                        <input type="text" class="form-input" name="company" placeholder="Your Company">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-en="Company Stage *" data-zh="公司阶段 *">Company Stage *</label>
+                        <select class="form-select" name="stage" required>
+                            <option value="" data-en="Please select" data-zh="请选择">Please select</option>
+                            <option value="idea" data-en="Idea Stage" data-zh="想法阶段">Idea Stage</option>
+                            <option value="mvp" data-en="MVP Stage" data-zh="MVP阶段">MVP Stage</option>
+                            <option value="growth" data-en="Growth Stage" data-zh="增长阶段">Growth Stage</option>
+                            <option value="scaling" data-en="Scaling Stage" data-zh="规模化阶段">Scaling Stage</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-en="Primary AI Interest *" data-zh="您最关心的AI应用场景 *">Primary AI Interest *</label>
+                        <select class="form-select" name="interest" required>
+                            <option value="" data-en="Please select" data-zh="请选择">Please select</option>
+                            <option value="customer-service" data-en="Customer Service Automation" data-zh="客户服务自动化">Customer Service Automation</option>
+                            <option value="content" data-en="Content & Marketing" data-zh="内容创作与营销">Content & Marketing</option>
+                            <option value="analytics" data-en="Data Analytics" data-zh="数据分析与洞察">Data Analytics</option>
+                            <option value="operations" data-en="Operations Optimization" data-zh="运营流程优化">Operations Optimization</option>
+                            <option value="product" data-en="Product Development" data-zh="产品研发加速">Product Development</option>
+                            <option value="other" data-en="Other" data-zh="其他">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-en="Tell Us About Your Needs" data-zh="具体需求描述">Tell Us About Your Needs</label>
+                        <textarea class="form-textarea" name="message" data-placeholder-en="Describe your specific challenges and goals..." data-placeholder-zh="告诉我们您的具体挑战和期望..." placeholder="Describe your specific challenges and goals..."></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit" id="submitBtn" data-en="SUBMIT INQUIRY" data-zh="提交咨询申请">
+                        SUBMIT INQUIRY
+                    </button>
+
+                    <div class="form-success" id="successMessage" data-en="🎉 Success! We'll send you an AI assessment report via email within 24 hours." data-zh="🎉 提交成功！我们将在24小时内通过邮件发送AI诊断报告。">
+                        🎉 Success! We'll send you an AI assessment report via email within 24 hours.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-brand">
+                        <div class="footer-brand-main">
+                            <div class="logo-icon">
+                                <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="40" cy="40" r="35" class="icon-white"/>
+                                    <circle cx="40" cy="20" r="3" class="icon-accent"/>
+                                    <circle cx="25" cy="35" r="3" class="icon-accent"/>
+                                    <circle cx="55" cy="35" r="3" class="icon-accent"/>
+                                    <circle cx="30" cy="55" r="3" class="icon-accent"/>
+                                    <circle cx="50" cy="55" r="3" class="icon-accent"/>
+                                    <path d="M 40 20 L 25 35" class="icon-white" opacity="0.3"/>
+                                    <path d="M 40 20 L 55 35" class="icon-white" opacity="0.3"/>
+                                    <circle cx="40" cy="40" r="2" class="icon-accent"/>
+                                    <path d="M 40 20 L 40 40" class="icon-accent" opacity="0.5"/>
+                                </svg>
+                            </div>
+                            <span class="footer-brand-text">VIOLA CONSEIL</span>
+                        </div>
+                        <span class="footer-brand-tagline">AI Consulting Excellence</span>
+                    </div>
+                    <p class="footer-desc" data-en="Empowering startups with practical, efficient, and actionable AI consulting. Using technology to accelerate entrepreneurial dreams." data-zh="专注为初创公司提供务实、高效、可落地的AI咨询服务。用技术加速创业梦想。">
+                        Empowering startups with practical, efficient, and actionable AI consulting. Using technology to accelerate entrepreneurial dreams.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-en="Quick Links" data-zh="快速链接">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#solutions" data-en="Solutions" data-zh="解决方案">Solutions</a></li>
+                        <li><a href="#blog" data-en="Insights" data-zh="洞察">Insights</a></li>
+                        <li><a href="#pricing" data-en="Pricing" data-zh="定价">Pricing</a></li>
+                        <li><a href="#contact" data-en="Contact" data-zh="联系我们">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 data-en="Contact" data-zh="联系方式">Contact</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:hello@violaconseil.com">hello@violaconseil.com</a></li>
+                        <li><a href="https://linkedin.com/company/viola-conseil" target="_blank">LinkedIn</a></li>
+                        <li><a href="#" target="_blank" data-en="WeChat" data-zh="微信公众号">WeChat</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-en="© 2025 Viola Conseil. All rights reserved. | AI-Powered Growth" data-zh="© 2025 Viola Conseil. All rights reserved. | 让AI为创业赋能">&copy; 2025 Viola Conseil. All rights reserved. | AI-Powered Growth</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language toggle
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'zh' : 'en';
+            
+            // Update language toggle buttons
+            document.querySelectorAll('.lang-option').forEach(option => {
+                if (option.getAttribute('data-lang') === currentLang) {
+                    option.classList.add('active');
+                } else {
+                    option.classList.remove('active');
+                }
+            });
+
+            // Update all text elements
+            document.querySelectorAll('[data-en]').forEach(element => {
+                const key = currentLang === 'en' ? 'data-en' : 'data-zh';
+                const text = element.getAttribute(key);
+                if (text) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = text;
+                    } else if (element.innerHTML.includes('<')) {
+                        // For elements with HTML (like hero h1)
+                        element.innerHTML = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+
+            // Update select options
+            document.querySelectorAll('option[data-en]').forEach(option => {
+                const key = currentLang === 'en' ? 'data-en' : 'data-zh';
+                option.textContent = option.getAttribute(key);
+            });
+
+            // Update pricing badge
+            const featuredCard = document.querySelector('.pricing-card.featured');
+            if (featuredCard) {
+                const badge = currentLang === 'en' ? 
+                    featuredCard.getAttribute('data-badge') : 
+                    featuredCard.getAttribute('data-badge-zh');
+                const style = document.createElement('style');
+                style.textContent = `.pricing-card.featured::before { content: "${badge}"; }`;
+                document.head.appendChild(style);
+            }
+
+            // Update textarea placeholder
+            const textarea = document.querySelector('.form-textarea');
+            if (textarea) {
+                const key = currentLang === 'en' ? 'data-placeholder-en' : 'data-placeholder-zh';
+                textarea.placeholder = textarea.getAttribute(key);
+            }
+
+            // Update HTML lang attribute
+            document.documentElement.lang = currentLang;
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+            
+            // Disable button
+            submitBtn.disabled = true;
+            const submittingText = currentLang === 'en' ? 'Submitting...' : '提交中...';
+            submitBtn.textContent = submittingText;
+            
+            // Simulate form submission (replace with actual API call)
+            setTimeout(function() {
+                // Show success message
+                successMessage.classList.add('show');
+                
+                // Reset form
+                document.getElementById('contactForm').reset();
+                
+                // Re-enable button
+                submitBtn.disabled = false;
+                const submitText = currentLang === 'en' ? 'SUBMIT INQUIRY' : '提交咨询申请';
+                submitBtn.textContent = submitText;
+                
+                // Hide success message after 5 seconds
+                setTimeout(function() {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            }, 1500);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
