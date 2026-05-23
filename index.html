@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Viola Ciao is a personal website spanning technology, music, art, dance, and social world-building.">
+    <meta name="description" content="Viola Ciao is a personal website spanning data, music, movement, art, and event planning.">
     <meta property="og:title" content="Viola Ciao">
-    <meta property="og:description" content="Technology, music, art, dance, and social world-building.">
+    <meta property="og:description" content="Data, music, movement, art, event planning.">
     <meta property="og:type" content="website">
     <title>Viola Ciao</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg: #f7f4ee;
-            --surface: #fbfaf7;
-            --ink: #131313;
-            --muted: #5a5a57;
-            --line: rgba(19, 19, 19, 0.14);
-            --soft-line: rgba(19, 19, 19, 0.08);
-            --max: 1100px;
+            --bg: #f7f6f2;
+            --ink: #111111;
+            --muted: #5e5e5b;
+            --line: rgba(17, 17, 17, 0.14);
+            --soft-line: rgba(17, 17, 17, 0.08);
+            --max: 1180px;
         }
 
         * {
@@ -38,7 +37,7 @@
             background: var(--bg);
             color: var(--ink);
             font-family: "Manrope", sans-serif;
-            line-height: 1.6;
+            line-height: 1.45;
         }
 
         a {
@@ -46,326 +45,301 @@
             text-decoration: none;
         }
 
+        img {
+            display: block;
+            width: 100%;
+        }
+
         .page {
             width: min(var(--max), calc(100% - 2rem));
             margin: 0 auto;
-            padding: 1.25rem 0 3rem;
+            padding: 2.2rem 0 3rem;
         }
 
-        .topbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            gap: 1rem;
-            padding: 0.75rem 0 1.5rem;
-            border-bottom: 1px solid var(--line);
+        .masthead {
+            font-size: clamp(1.8rem, 2.3vw, 2.5rem);
+            font-weight: 500;
+            letter-spacing: -0.04em;
+            position: relative;
+            left: -2.6rem;
         }
 
-        .site-title {
-            font-size: 0.9rem;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
+        .intro {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 360px;
+            gap: 6rem;
+            padding-top: 6.5rem;
+            padding-bottom: 5rem;
         }
 
-        .nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+        .intro h1,
+        .works h2,
+        .work-title {
+            font-weight: 500;
+            letter-spacing: -0.06em;
+            line-height: 0.95;
+        }
+
+        .intro h1,
+        .works h2 {
+            font-size: clamp(2.4rem, 4vw, 3.6rem);
+            margin-bottom: 2rem;
+        }
+
+        .current-list {
+            max-width: 30rem;
+        }
+
+        .current-item + .current-item {
+            margin-top: 2rem;
+        }
+
+        .current-item h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .current-item p {
             color: var(--muted);
-            font-size: 0.95rem;
+            font-size: 1rem;
+            margin-top: 0.1rem;
         }
 
-        .nav a:hover,
-        .nav a:focus-visible {
+        .current-item .strong {
             color: var(--ink);
         }
 
-        main {
-            padding-top: 2.5rem;
+        .link-stack {
+            padding-top: 0.4rem;
         }
 
-        .hero {
-            display: grid;
-            grid-template-columns: 1.3fr 0.7fr;
-            gap: 2rem;
-            padding-bottom: 3rem;
-            border-bottom: 1px solid var(--line);
-        }
-
-        h1,
-        h2,
-        h3 {
-            font-weight: 500;
-            line-height: 1;
-        }
-
-        h1 {
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(4rem, 11vw, 8rem);
+        .link-stack a {
+            display: block;
+            width: fit-content;
+            font-size: clamp(1.7rem, 2.5vw, 2.8rem);
             letter-spacing: -0.06em;
-            margin-bottom: 1rem;
+            line-height: 1.02;
+            border-bottom: 1px solid var(--ink);
+            margin-bottom: 0.3rem;
         }
 
-        .hero-copy {
-            max-width: 38rem;
-            font-size: 1.12rem;
-            color: var(--muted);
-        }
-
-        .hero-copy p + p {
-            margin-top: 1rem;
-        }
-
-        .hero-note {
-            align-self: end;
+        .works {
             padding-top: 1rem;
-            color: var(--muted);
-            font-size: 0.96rem;
         }
 
-        .section {
-            display: grid;
-            grid-template-columns: 0.35fr 1fr;
-            gap: 2rem;
-            padding: 2.4rem 0;
-            border-bottom: 1px solid var(--soft-line);
-        }
-
-        .section-label {
-            font-size: 0.82rem;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
-
-        .section-body h2 {
-            font-family: "Cormorant Garamond", serif;
-            font-size: clamp(2rem, 4vw, 3.1rem);
-            letter-spacing: -0.04em;
-            margin-bottom: 1rem;
-        }
-
-        .section-body p {
-            max-width: 42rem;
-            color: var(--muted);
-        }
-
-        .section-body p + p {
-            margin-top: 1rem;
-        }
-
-        .list-grid {
-            display: grid;
-            gap: 1.1rem;
-            margin-top: 1.4rem;
-        }
-
-        .list-row {
-            display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 1rem;
-            padding-top: 1rem;
+        .work {
+            margin-top: 2.3rem;
+            padding-top: 2.3rem;
             border-top: 1px solid var(--soft-line);
         }
 
-        .list-row:first-child {
-            border-top: 0;
-            padding-top: 0;
+        .work-header {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 300px;
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 2rem;
         }
 
-        .list-row .meta {
+        .work-title {
+            font-size: clamp(2.2rem, 4.8vw, 3.4rem);
+            max-width: 10ch;
+        }
+
+        .work-meta {
             color: var(--muted);
-            font-size: 0.92rem;
+            font-size: 1rem;
+            line-height: 1.5;
         }
 
-        .list-row h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.35rem;
+        .work-meta .strong {
+            color: var(--ink);
         }
 
-        .list-row p {
-            max-width: 38rem;
+        .gallery {
+            display: grid;
+            gap: 1rem;
+            max-width: 760px;
+        }
+
+        .gallery-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .gallery > img {
+            max-width: 760px;
+        }
+
+        .gallery-pair img {
+            max-width: 370px;
+        }
+
+        .caption {
+            max-width: 30rem;
+            color: var(--muted);
             font-size: 0.98rem;
         }
 
-        .projects a {
-            display: block;
+        .work-text {
+            max-width: 52rem;
+            margin-top: 1.25rem;
+            color: var(--ink);
+            font-size: 1.02rem;
+            line-height: 1.55;
         }
 
-        .projects a:hover h3,
-        .projects a:focus-visible h3,
-        .writing a:hover h3,
-        .writing a:focus-visible h3 {
-            text-decoration: underline;
-            text-underline-offset: 0.12em;
+        .work-text p + p {
+            margin-top: 1rem;
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 220px minmax(0, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            padding-top: 2.3rem;
+            border-top: 1px solid var(--soft-line);
+        }
+
+        .about-label {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .about-copy {
+            max-width: 42rem;
+            color: var(--muted);
+            font-size: 1.02rem;
+        }
+
+        .about-copy p + p {
+            margin-top: 1rem;
         }
 
         .footer {
-            padding-top: 1.5rem;
+            margin-top: 3rem;
             color: var(--muted);
             font-size: 0.92rem;
         }
 
-        @media (max-width: 820px) {
-            .hero,
-            .section,
-            .list-row {
+        @media (max-width: 920px) {
+            .intro,
+            .work-header,
+            .about,
+            .gallery-pair {
                 grid-template-columns: 1fr;
             }
 
-            .topbar {
-                align-items: start;
-                flex-direction: column;
+            .intro {
+                gap: 3rem;
+                padding-top: 4rem;
             }
+        }
 
+        @media (max-width: 640px) {
             .page {
                 width: min(var(--max), calc(100% - 1.25rem));
+                padding-top: 1.5rem;
             }
 
-            .hero-note {
-                padding-top: 0;
+            .masthead {
+                left: 0;
+            }
+
+            .intro {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="page">
-        <header class="topbar">
-            <div class="site-title">Viola Ciao</div>
-            <nav class="nav" aria-label="Primary">
-                <a href="#about">About</a>
-                <a href="#practice">Practice</a>
-                <a href="#projects">Projects</a>
-                <a href="#writing">Writing</a>
-            </nav>
-        </header>
+        <header class="masthead">Viola Ciao</header>
 
         <main>
-            <section class="hero">
+            <section class="intro">
                 <div>
-                    <h1>Viola Ciao</h1>
-                    <div class="hero-copy">
+                    <h1>current</h1>
+                    <div class="current-list">
+                        <div class="current-item">
+                            <h3>Artsy Mixer, Soho</h3>
+                            <p class="strong">co-hosted social event</p>
+                            <p>Conversation, prompts, atmosphere</p>
+                            <p>Soho, New York</p>
+                        </div>
+                        <div class="current-item">
+                            <h3>Personal website</h3>
+                            <p>Data, music, movement, art, event planning</p>
+                        </div>
+                        <div class="current-item">
+                            <h3>Ongoing practice</h3>
+                            <p>Technology, performance, visual work, and social formats kept in one frame</p>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="link-stack" aria-label="Primary">
+                    <a href="#works">works &gt;&gt;</a>
+                    <a href="#about">bio &gt;&gt;</a>
+                    <a href="writing/scenes-systems-atmosphere.html">writing &gt;&gt;</a>
+                </nav>
+            </section>
+
+            <section class="works" id="works">
+                <h2>previous events</h2>
+
+                <article class="work">
+                    <div class="work-header">
+                        <h3 class="work-title">Artsy Mixer, Soho</h3>
+                        <div class="work-meta">
+                            <div class="strong">social format / event co-hosting</div>
+                            <div>conversation prompts, atmosphere, gathering design</div>
+                            <div>2026</div>
+                        </div>
+                    </div>
+
+                    <div class="gallery">
+                        <img src="assets/images/DSC09172.jpeg" alt="Guests seated in a circle during an Artsy Mixer event in Soho.">
+                        <p class="caption">
+                            An event built around conversation, warmth, and the social texture of a room.
+                        </p>
+                        <div class="gallery-pair">
+                            <img src="assets/images/DSC09859.jpeg" alt="Guests smiling and drawing prompts together at the Artsy Mixer event.">
+                            <img src="assets/images/IMG_1571.jpeg" alt="A guest in conversation during the Artsy Mixer event in Soho.">
+                        </div>
+                    </div>
+
+                    <div class="work-text">
                         <p>
-                            I work across technology, music, art, dance, and social world-building.
+                            Artsy Mixer is a social format I co-hosted in Soho, built around conversation prompts, small-group
+                            interaction, and the feeling of entering a room that is already warm.
                         </p>
                         <p>
-                            This site is a simple place to show the shape of that practice without separating the technical work from the cultural, visual, and human parts of it.
+                            What interests me in projects like this is not only the event itself, but the design of atmosphere:
+                            how people arrive, how they begin talking, how attention shifts, and how a gathering can feel
+                            intentional without becoming rigid.
                         </p>
                     </div>
-                </div>
-                <div class="hero-note">
-                    Personal website.<br>
-                    Systems, sound, movement, images, gatherings.
-                </div>
+                </article>
             </section>
 
-            <section class="section" id="about">
-                <div class="section-label">About</div>
-                <div class="section-body">
-                    <h2>One practice, several mediums.</h2>
+            <section class="about" id="about">
+                <div class="about-label">bio</div>
+                <div class="about-copy">
                     <p>
-                        I am interested in how structure and feeling meet: AI and data systems, performance, visual language, choreography, and the design of social experiences.
+                        I work across data, music, movement, art, and event planning.
                     </p>
                     <p>
-                        Rather than presenting those as separate identities, I want this site to hold them together in one quiet frame.
+                        I am interested in the relationship between structure and feeling: technical systems, visual language,
+                        performance, choreography, and the design of social experiences.
                     </p>
-                </div>
-            </section>
-
-            <section class="section" id="practice">
-                <div class="section-label">Practice</div>
-                <div class="section-body">
-                    <h2>Current areas.</h2>
-                    <div class="list-grid">
-                        <div class="list-row">
-                            <div class="meta">Technology</div>
-                            <div>
-                                <h3>AI, data, and digital systems</h3>
-                                <p>Applied tools, product thinking, experimentation, and technical work shaped by clarity and restraint.</p>
-                            </div>
-                        </div>
-                        <div class="list-row">
-                            <div class="meta">Music</div>
-                            <div>
-                                <h3>Sound and performance</h3>
-                                <p>Music as atmosphere, memory, rhythm, and identity.</p>
-                            </div>
-                        </div>
-                        <div class="list-row">
-                            <div class="meta">Art</div>
-                            <div>
-                                <h3>Visual and conceptual work</h3>
-                                <p>Image direction, composition, aesthetics, and forms that avoid generic visual language.</p>
-                            </div>
-                        </div>
-                        <div class="list-row">
-                            <div class="meta">Dance</div>
-                            <div>
-                                <h3>Movement and presence</h3>
-                                <p>Choreographic thinking, rhythm, embodiment, and the intelligence of performance in space.</p>
-                            </div>
-                        </div>
-                        <div class="list-row">
-                            <div class="meta">Social</div>
-                            <div>
-                                <h3>Mixers, scenes, and gatherings</h3>
-                                <p>Designing formats where people can meet, connect, and create a stronger shared atmosphere.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section projects" id="projects">
-                <div class="section-label">Projects</div>
-                <div class="section-body">
-                    <h2>Selected directions.</h2>
-                    <div class="list-grid">
-                        <a class="list-row" href="#projects">
-                            <div class="meta">Social formats</div>
-                            <div>
-                                <h3>Social mixer projects</h3>
-                                <p>Experiments in designing rooms, prompts, and gatherings that make connection feel intentional.</p>
-                            </div>
-                        </a>
-                        <a class="list-row" href="#projects">
-                            <div class="meta">Creative tech</div>
-                            <div>
-                                <h3>Artistic and technical experiments</h3>
-                                <p>Tools and interfaces that support expression instead of overwhelming it.</p>
-                            </div>
-                        </a>
-                        <a class="list-row" href="#projects">
-                            <div class="meta">Performance</div>
-                            <div>
-                                <h3>Music, movement, and visual worlds</h3>
-                                <p>Projects where sound, choreography, styling, and spatial feeling can operate together.</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section writing" id="writing">
-                <div class="section-label">Writing</div>
-                <div class="section-body">
-                    <h2>Notes and essays.</h2>
-                    <div class="list-grid">
-                        <a class="list-row" href="writing/scenes-systems-atmosphere.html">
-                            <div class="meta">Essay · 2026</div>
-                            <div>
-                                <h3>On scenes, systems, and atmosphere</h3>
-                                <p>A personal note on technology, movement, aesthetics, and building social worlds.</p>
-                            </div>
-                        </a>
-                        <div class="list-row">
-                            <div class="meta">Forthcoming</div>
-                            <div>
-                                <h3>More personal writing</h3>
-                                <p>Future writing can move between technology, aesthetics, performance, and social observation.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <p>
+                        This site is a simple place to keep those things together.
+                    </p>
                 </div>
             </section>
         </main>
