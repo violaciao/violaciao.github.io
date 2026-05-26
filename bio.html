@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bio — Viola Ciao. Singer, dancer, AI consultant, data person, New York.">
+    <meta property="og:title" content="Bio — Viola Ciao">
+    <meta property="og:description" content="Singer, dancer, AI consultant, data person, New York.">
+    <meta property="og:type" content="website">
+    <title>Bio — Viola Ciao</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f7f6f2;
+            --ink: #111111;
+            --muted: #5e5e5b;
+            --line: rgba(17, 17, 17, 0.14);
+            --soft-line: rgba(17, 17, 17, 0.08);
+            --max: 1180px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--ink);
+            font-family: "Manrope", sans-serif;
+            line-height: 1.45;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        .page {
+            width: min(var(--max), calc(100% - 2rem));
+            margin: 0 auto;
+            padding: 2.2rem 0 5rem;
+        }
+
+        /* ── Header ── */
+        .masthead {
+            display: flex;
+            align-items: baseline;
+            gap: 1.8rem;
+        }
+
+        .back {
+            font-size: 0.9rem;
+            color: var(--muted);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .back:hover {
+            border-color: var(--muted);
+        }
+
+        .site-name {
+            font-size: clamp(1.8rem, 2.3vw, 2.5rem);
+            font-weight: 500;
+            letter-spacing: -0.04em;
+        }
+
+        /* ── Hero: sticky photo + statement ── */
+        .hero {
+            display: grid;
+            grid-template-columns: 5fr 6fr;
+            gap: 6rem;
+            padding-top: 5.5rem;
+            align-items: start;
+        }
+
+        .photo-lead {
+            position: sticky;
+            top: 2.5rem;
+        }
+
+        .photo-stack {
+            position: relative;
+        }
+
+        .photo-stack img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-stack .photo-hover {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .photo-stack:hover .photo-hover {
+            opacity: 1;
+        }
+
+        .statement {
+            padding-top: 0.5rem;
+        }
+
+        .statement-label,
+        .statement p.statement-label {
+            font-size: 0.95rem !important;
+            font-weight: 700 !important;
+            color: var(--muted);
+            letter-spacing: 0.02em;
+            text-transform: lowercase;
+            margin-bottom: 1.2rem;
+        }
+
+        .statement p {
+            font-size: clamp(1.25rem, 1.8vw, 1.75rem);
+            font-weight: 400;
+            letter-spacing: -0.025em;
+            line-height: 1.38;
+            color: var(--ink);
+        }
+
+        .statement p + p {
+            margin-top: 1.5em;
+        }
+
+        /* ── Lower section: details ── */
+        .lower {
+            margin-top: 6rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--soft-line);
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+
+        .detail-block {}
+
+        .detail-label {
+            font-size: 0.78rem;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.7rem;
+        }
+
+        .detail-value {
+            font-size: 0.98rem;
+            line-height: 1.7;
+            color: var(--ink);
+        }
+
+        .detail-value a {
+            border-bottom: 1px solid var(--line);
+            transition: border-color 0.2s;
+        }
+
+        .detail-value a:hover {
+            border-color: var(--ink);
+        }
+
+
+        /* ── Big link row ── */
+        .link-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .link-row a {
+            display: inline-block;
+            font-size: clamp(1.5rem, 2.2vw, 2rem);
+            font-weight: 500;
+            letter-spacing: -0.05em;
+            line-height: 1.1;
+            border-bottom: 1px solid var(--ink);
+            width: fit-content;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            margin-top: 5rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 860px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 2.8rem;
+            }
+
+            .photo-lead {
+                position: static;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page {
+                width: min(var(--max), calc(100% - 1.25rem));
+                padding-top: 1.5rem;
+            }
+
+            .hero {
+                padding-top: 3rem;
+            }
+
+            .statement p {
+                font-size: clamp(1.1rem, 5vw, 1.3rem);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <header class="masthead">
+            <a href="/" class="back">← home</a>
+            <span class="site-name">Viola Ciao</span>
+        </header>
+
+        <main>
+
+            <!-- Hero -->
+            <section class="hero">
+                <div class="photo-lead">
+                    <div class="photo-stack">
+                        <img src="assets/bio/IMG_1672.JPG" alt="Viola Ciao">
+                        <img src="assets/bio/IMG_0467.JPG" alt="Viola Ciao" class="photo-hover">
+                    </div>
+                </div>
+
+                <div class="statement">
+                    <p>Hi, I'm Viola. I sing, I dance, and I run a little AI consulting thing in New York.</p>
+                    <p>I'm a sucker for patterns. I love dealing with data, and there's a decent chance you'll catch me playing Sudoku on the subway, fully zoned out between stops. I'm interested in the relationship between structure and feeling: data and logic, visual language, performance, choreography, and the design of social experiences.</p>
+                    <p>Mostly I'm just curious. About people, about cities, about whatever's at the edges of things. If you're curious too, we'll probably get along.</p>
+                    <div class="link-row" style="margin-top: 2rem;">
+                        <a href="https://www.instagram.com/violaciao" target="_blank" rel="noopener">Instagram →</a>
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+
+        <footer class="footer">
+            © <span id="year"></span> Viola Ciao
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
