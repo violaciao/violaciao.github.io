@@ -54,3 +54,7 @@ venv/
 
 # Misc
 *.bak
+
+# Screenshots
+Screenshot*.png
+Screenshot*.jpg
