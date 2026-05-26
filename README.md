@@ -1,8 +1,15 @@
 # violaciao.github.io
 
-Personal website for Viola Ciao.
+Personal website for Viola Ciao — singer, dancer, AI consultant, New York.
 
-The site is a minimal personal website.
+## Pages
 
-- `index.html`: homepage with about, practice, projects, and writing sections
-- `writing/scenes-systems-atmosphere.html`: personal essay linked from the homepage
+- `index.html` — homepage with typewriter animation
+- `bio.html` — bio with photo, personal statement, and Instagram
+- `mixers.html` — events and gatherings (coming soon)
+- `writing/index.html` — writing index
+- `writing/scenes-systems-atmosphere.html` — essay: On Scenes, Systems, and Atmosphere
+
+## Assets
+
+- `assets/bio/` — profile photos
