@@ -1,6 +1,6 @@
 # violaciao.github.io
 
-Personal website for Viola Ciao — singer, dancer, AI consultant, New York.
+Personal website for Viola Ciao.
 
 ## Pages
 
