@@ -1,15 +1,14 @@
 # violaciao.github.io
 
-Personal website for Viola Ciao.
+This site is built like a small puzzle room.
 
-## Pages
+Nothing here asks to be rushed. The homepage waits with a typewriter, a few hidden gestures, and enough stray clues to reward a careful eye. Some paths open immediately. Others only appear after you have paid attention.
 
-- `index.html` — homepage with typewriter animation
-- `bio.html` — bio with photo, personal statement, and Instagram
-- `mixers.html` — events and gatherings (coming soon)
-- `writing/index.html` — writing index
-- `writing/scenes-systems-atmosphere.html` — essay: On Scenes, Systems, and Atmosphere
+If you are visiting for the first time, start at the home page and let the site reveal itself.
 
-## Assets
 
-- `assets/bio/` — profile photos
+## A small hint
+
+Click things around. Read the captions. Notice what changes after you solve something.
+
+They say that the third time is a charm :)
