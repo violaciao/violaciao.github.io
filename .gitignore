@@ -58,3 +58,6 @@ venv/
 # Screenshots
 Screenshot*.png
 Screenshot*.jpg
+
+# Site sections to keep out of future commits
+writing/
