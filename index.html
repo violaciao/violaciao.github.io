@@ -218,9 +218,9 @@
 
         .tree-hollow-scene {
             position: absolute;
-            left: clamp(0.35rem, 1.7vw, 1.6rem);
-            bottom: clamp(0.65rem, 2.4vh, 1.5rem);
-            width: clamp(112px, 14vw, 190px);
+            left: clamp(1.4rem, 3vw, 2.8rem);
+            bottom: clamp(1rem, 3vh, 2rem);
+            width: clamp(88px, 10vw, 124px);
             z-index: 3;
             opacity: 0;
             pointer-events: none;
@@ -254,7 +254,7 @@
             display: block;
             width: 100%;
             height: auto;
-            opacity: 0.5;
+            opacity: 0.82;
             transition: transform 0.18s ease, opacity 0.18s ease;
         }
 
@@ -758,10 +758,18 @@
         }
 
         @media (max-width: 820px) {
+            .puppy-runway {
+                bottom: clamp(3.2rem, 8vh, 4.8rem);
+                height: clamp(112px, 29vw, 142px);
+            }
+
             .tree-hollow-scene {
-                left: 0.35rem;
-                bottom: 0.8rem;
-                width: clamp(96px, 24vw, 136px);
+                left: 0.9rem;
+                bottom: clamp(3.2rem, 8vh, 4.8rem);
+                width: clamp(82px, 22vw, 112px);
+            }
+
+            .tree-hollow-scene.is-unlocked {
                 opacity: 0.92;
             }
 
@@ -865,7 +873,7 @@
 
         <div class="tree-hollow-scene">
             <button class="tree-button" type="button" aria-label="Open the tree hollow riddle" aria-expanded="false">
-                <img class="tree-image" src="assets/images/tree-hollow-transparent.png" alt="">
+                <img class="tree-image" src="assets/images/tree-hollow-doodle.png" alt="">
             </button>
             <section class="hollow-panel" aria-live="polite" aria-label="Tree hollow riddle game" hidden>
                 <p class="hollow-title">the hollow asks</p>
